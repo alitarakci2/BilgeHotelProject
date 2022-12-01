@@ -153,6 +153,7 @@
     <Compile Include="VMClasses\PaginationVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\AdminScripts\AdminRoomTypeDTJ.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1977,6 +1978,8 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\RoomType\RoomTypeList.cshtml" />
+    <Content Include="Areas\Admin\Views\RoomType\AddRoomType.cshtml" />
+    <Content Include="Areas\Admin\Views\RoomType\UpdateRoomType.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

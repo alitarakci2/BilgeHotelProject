@@ -7,7 +7,7 @@
 
 <section class="panel">
     <header class="panel-heading">
-        DataTables hidden row details example
+        @Html.ActionLink("Oda Tipi Ekle", "AddRoomType", "RoomType", null, new {@class="btn btn-primary"})
     </header>
     <div class="panel-body">
         <div class="adv-table">
@@ -37,6 +37,7 @@
                                 @item.TypeName
                             </td>
                             <td class="hidden-phone">@item.UnitPrice</td>
+                            <td class="center hidden-phone">@item.GuestCapacity</td>
                             <td class="center hidden-phone">@item.Status</td>
                             <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteRoomType", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
                             <td class="center hidden-phone">@Html.ActionLink("Guncelle", "UpdateRoomType", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
@@ -54,3 +55,5 @@
         </div>
     </div>
 </section>
+
+<script src="~/Areas/Admin/AdminScripts/AdminRoomTypeDTJ.js"></script>

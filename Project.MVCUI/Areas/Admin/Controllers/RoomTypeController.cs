@@ -23,7 +23,7 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         {
             RoomTypeVM rtvm = id == null ? new RoomTypeVM
             {
-                RoomTypes = _rtRep.GetAll()
+                RoomTypes = _rtRep.GetActives()
             } : new RoomTypeVM { RoomTypes = _rtRep.Where(x => x.ID == id) };
 
             return View(rtvm);
