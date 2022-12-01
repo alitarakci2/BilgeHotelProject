@@ -1,0 +1,56 @@
+﻿@model RoomTypeVM
+@{
+    ViewBag.Title = "RoomTypeList";
+}
+
+<h2>RoomTypeList</h2>
+
+<section class="panel">
+    <header class="panel-heading">
+        DataTables hidden row details example
+    </header>
+    <div class="panel-body">
+        <div class="adv-table">
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                <thead>
+                    <tr>
+                        <th>RoomType ID</th>
+                        <th>RoomType Name</th>
+                        <th class="hidden-phone">Price</th>
+                        <th class="hidden-phone">Guest Capacity</th>
+                        <th class="hidden-phone">Status</th>
+                        <th class="hidden-phone">Delete</th>
+                        <th class="hidden-phone">Update</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (Project.ENTITIES.Models.RoomType item in Model.RoomTypes)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.ID</td>
+                            <td>
+                                @item.TypeName
+                            </td>
+                            <td class="hidden-phone">@item.UnitPrice</td>
+                            <td class="center hidden-phone">@item.Status</td>
+                            <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteRoomType", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                            <td class="center hidden-phone">@Html.ActionLink("Guncelle", "UpdateRoomType", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                        </tr>
+
+
+
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
