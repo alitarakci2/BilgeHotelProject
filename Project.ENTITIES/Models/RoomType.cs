@@ -10,7 +10,7 @@ namespace Project.ENTITIES.Models
     {
         public RoomType()
         {
-            Rooms = new List<Room>();
+         //   Rooms = new List<Room>();
         }
 
 

@@ -9,6 +9,7 @@ namespace Project.ENTITIES.Models
 {
     public class Room:BaseEntity
     {
+    
         public string RoomNumber { get; set; }
 
         public RoomStatus RoomStatus { get; set; }

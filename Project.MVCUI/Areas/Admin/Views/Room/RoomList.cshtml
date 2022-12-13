@@ -1,0 +1,66 @@
+﻿@model RoomVM
+
+@{
+    ViewBag.Title = "RoomList";
+}
+<script src="~/OuterTools/LightBox/lightbox-2.6.min.js"></script>
+<link href="~/OuterTools/LightBox/lightbox.css" rel="stylesheet" />
+
+
+<section class="panel">
+    <header class="panel-heading">
+        @Html.ActionLink("Oda ekle", "AddRoom", "Room", null, new { @class = "btn btn-primary" })
+    </header>
+    <div class="panel-body">
+        <div class="adv-table">
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                <thead>
+                    <tr>
+                        <th>Room ID</th>
+                        <th>Room Number</th>
+                        <th class="hidden-phone">Floor Number</th>
+                        <th class="hidden-phone">Room Status</th>
+                        <th class="hidden-phone">Room Type</th>
+                        <th class="hidden-phone">Status</th>
+                        <th class="hidden-phone">Delete</th>
+                        <th class="hidden-phone">Update</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Project.ENTITIES.Models.Room item in Model.Rooms)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.ID</td>
+                            <td>
+                                @item.RoomNumber
+                            </td>
+                            <td>@item.FloorNumber</td>
+                            <td>@item.RoomStatus</td>
+                            @if (item.RoomType == null)
+                            {
+                                <td>Oda tipi Belirtilmemiş</td>
+                            }
+                            else
+                            {
+                                <td>@item.RoomType.TypeName</td>
+                            }
+                            
+                            <td class="center hidden-phone">@item.Status</td>
+                            <td class="center hidden-phone"> @Html.ActionLink("Delete", "DeleteRoom", new { id = item.ID }, new { @class = "btn btn-danger" })  </td>
+                            <td class="center hidden-phone">  @Html.ActionLink("Update", "UpdateRoom", new { id = item.ID }, new { @class = "btn btn-warning" })  </td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+<script src="~/Areas/Admin/AdminScripts/AdminRoomDTJ.js"></script>
+

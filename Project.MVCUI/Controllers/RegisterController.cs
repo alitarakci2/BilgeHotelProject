@@ -71,7 +71,7 @@ namespace Project.MVCUI.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            //toDo Log
+
             TempData["HesapAktifMi"] = "Hesabınız bulunamadı";
 
             return RedirectToAction("Login", "Home");

@@ -1,7 +1,8 @@
-﻿@model RoomTypeVM
+﻿@model RoomVM
 @{
-    ViewBag.Title = "AddRoomType";
+    ViewBag.Title = "UpdateRoom";
 }
+
 
 <style>
     .genislik {
@@ -9,21 +10,25 @@
     }
 </style>
 
-@using (Html.BeginForm("AddRoomType", "RoomType", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+
+@using (Html.BeginForm())
 {
+    @Html.HiddenFor(x => x.Room.ID)
+
     <div class="row">
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
-                    Oda Tipi Ekleme Sayfası
+                    Oda Guncelleme Sayfasi
                 </header>
 
                 <div class="panel-body">
 
                     <div class="form-group">
-                        <label class="col-sm-2">Oda Tipi Ismi</label>
+                        <label class="col-sm-2"> Oda Numarasi</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.RoomType.TypeName, new { @class = "form-control genislik" })
+                            @Html.TextBoxFor(x => x.Room.RoomNumber, new { @class = "form-control genislik" })
                         </div>
                     </div>
 
@@ -31,20 +36,39 @@
 
 
                     <div class="form-group">
-                        <label class="col-sm-2">Fiyat</label>
+                        <label class="col-sm-2">Kat bilgisi</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.RoomType.UnitPrice, new { @class = "form-control genislik" })
+                            @Html.TextBoxFor(x => x.Room.FloorNumber, new { @class = "form-control genislik" })
                         </div>
                     </div>
 
                     <br /> <br />
 
                     <div class="form-group">
-                        <label class="col-sm-2">Kisi Sayisi</label>
+                        <label class="col-sm-2">Oda Durumu</label>
                         <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.RoomType.GuestCapacity, new { @class = "form-control genislik" })
+
+                            @Html.EnumDropDownListFor(model => model.Room.RoomStatus)
                         </div>
                     </div>
+
+                    <br /> <br />
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Oda Tipi</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(x => x.Room.RoomTypeID, new SelectList(Model.RoomTypes, "ID", "TypeName"), "Lutfen seciniz", new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+
                     <div class="form-group">
                         <label class="col-sm-2">Resim seciniz</label>
                         <div class="col-sm-10">
@@ -55,6 +79,10 @@
                     </div>
 
                     <br /> <br />
+
+
+
+
 
                     <div class="form-group">
                         <label class="col-sm-2">İşlem : </label>

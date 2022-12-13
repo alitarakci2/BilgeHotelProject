@@ -1,6 +1,7 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
 using Project.ENTITIES.Models;
 using Project.MVCUI.Areas.Admin.AdminVMClasses;
+using Project.MVCUI.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,8 +39,9 @@ namespace Project.MVCUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddRoomType(RoomType roomType)
+        public ActionResult AddRoomType(RoomType roomType, HttpPostedFileBase image, string fileName)
         {
+            roomType.ImagePath = ImageUploader.UploadImage("/Pictures/", image, fileName);
             _rtRep.Add(roomType);
             return RedirectToAction("RoomTypeList");
         }
