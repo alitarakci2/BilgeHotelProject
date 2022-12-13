@@ -9,6 +9,11 @@ namespace Project.ENTITIES.Models
 {
     public class Room:BaseEntity
     {
+
+        public Room()
+        {
+            BookingManagements = new List<BookingManagement>();
+        }
     
         public string RoomNumber { get; set; }
 
@@ -18,12 +23,14 @@ namespace Project.ENTITIES.Models
 
         public string Description { get; set; }
 
+        public string ImagePath { get; set; }
+
         public int RoomTypeID { get; set; }
 
         //Relational Properties
 
         public virtual RoomType RoomType { get; set; }
-        public virtual List<BookingManagement> BookingManagement { get; set; }
+        public virtual List<BookingManagement> BookingManagements { get; set; }
 
 
 

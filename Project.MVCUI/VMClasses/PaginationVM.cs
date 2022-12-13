@@ -9,9 +9,10 @@ namespace Project.MVCUI.VMClasses
 {
     public class PaginationVM
     {
-        public RoomType RoomType { get; set; }
-
         public List<RoomType> RoomTypes { get; set; }
+
+        public List<Room> Rooms { get; set; }
+        public IPagedList<Room> PagedRooms { get; set; }
         public IPagedList<RoomType> PagedRoomTypes { get; set; }
 
 
