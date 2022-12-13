@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 /Project.COMMON/Tools/DantexCrypt.cs
+/Project.MVCUI/Tools/ImageUploader.cs
