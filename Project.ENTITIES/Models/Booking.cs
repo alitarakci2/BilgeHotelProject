@@ -21,6 +21,7 @@ namespace Project.ENTITIES.Models
         public int? AppUserID { get; set; }
         public int? RoomTypeID { get; set; }
 
+        public decimal TotalPrice { get; set; }
 
         //Relational Properties
 

@@ -1,0 +1,96 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "PaySalary";
+}
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+@using (Html.BeginForm("PaySalary", "Salary", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.Employee.ID)
+    <div class="row">
+        <div class="col-sm-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Maas Odeme Sayfasi
+                </header>
+
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Calisan Ismi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Employee.FirstName, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Calisan Soyismi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Employee.LastName, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Base Ucreti</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Employee.BaseSalary, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2">Maas Tipi</label>
+                        <div class="col-sm-10">
+
+                            @Html.EnumDropDownListFor(model => model.Employee.SalaryType)
+                        </div>
+                    </div>
+
+
+                    <br /> <br />
+                    <div class="form-group">
+                        <label class="col-sm-2"></label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Employee.WorkedHours, new { @class = "form-control genislik" })
+                        </div>
+                    </div>
+
+
+                    <br /> <br />
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2">İşlem : </label>
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary">Ekle</button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+}
+
+

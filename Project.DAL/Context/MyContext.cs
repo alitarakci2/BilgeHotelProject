@@ -29,6 +29,7 @@ namespace Project.DAL.Context
             modelBuilder.Configurations.Add(new ProfileMap());
             modelBuilder.Configurations.Add(new RoomMap());
             modelBuilder.Configurations.Add(new RoomTypeMap());
+            modelBuilder.Configurations.Add(new EmployeeMap());
 
         }
 
@@ -38,6 +39,7 @@ namespace Project.DAL.Context
         public DbSet<BookingManagement> BookingManagements { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
 
 

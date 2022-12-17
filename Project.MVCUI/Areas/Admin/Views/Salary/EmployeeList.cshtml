@@ -1,0 +1,67 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "EmployeeList";
+}
+
+<script src="~/OuterTools/LightBox/lightbox-2.6.min.js"></script>
+<link href="~/OuterTools/LightBox/lightbox.css" rel="stylesheet" />
+<section class="panel">
+    <header class="panel-heading">
+    </header>
+    <div class="panel-body">
+        <div class="adv-table">
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th class="hidden-phone">Base Salary</th>
+                        <th class="hidden-phone">FirstName</th>
+                        <th class="hidden-phone">LastName</th>
+                        <th class="hidden-phone">Status</th>
+                        <th class="hidden-phone">TotalSalary</th>
+
+
+                        <th class="hidden-phone">Pay</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    @foreach (Project.ENTITIES.Models.Employee item in Model.Employees)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.ID</td>
+                            <td>
+                                @item.BaseSalary
+                            </td>
+                            <td class="hidden-phone">@item.FirstName</td>
+                            <td class="center hidden-phone">@item.LastName</td>
+                            <td class="center hidden-phone">@item.TotalSalary</td>
+
+                            @Html.HiddenFor(x => x.Employee.ID)
+
+
+
+                            <td class="center hidden-phone">@item.Status</td>
+                            <td class="center hidden-phone">@Html.ActionLink("OdemeYap", "PaySalary", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+
+                        </tr>
+
+
+
+                    }
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+
+<script src="~/Areas/Admin/AdminScripts/AdminRoomTypeDTJ.js"></script>
+

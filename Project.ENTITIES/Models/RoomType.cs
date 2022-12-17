@@ -8,18 +8,14 @@ namespace Project.ENTITIES.Models
 {
     public class RoomType:BaseEntity
     {
-        public RoomType()
-        {
-            Rooms = new List<Room>();
-            Bookings = new List<Booking>();
-        }
+
 
 
         public string TypeName { get; set; }
 
         public int GuestCapacity { get; set; }
 
-        public decimal? UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
         public string ImagePath { get; set; }
          
         public bool IsMiniBar { get; set; }
@@ -37,6 +33,8 @@ namespace Project.ENTITIES.Models
         public virtual List<Booking> Bookings { get; set; }
 
         public virtual List<Room> Rooms { get; set; }
+
+        public virtual List<BookingManagement> BookingManagements { get; set; }
 
 
 

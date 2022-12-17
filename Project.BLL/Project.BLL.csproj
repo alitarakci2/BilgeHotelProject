@@ -55,6 +55,7 @@
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\AppUserRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\BookingManagementRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\BookingRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepository\ConcRep\EmployeeRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\ProfileRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\RoomRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepository\ConcRep\RoomTypeRepository.cs" />

@@ -9,7 +9,7 @@ namespace Project.ENTITIES.Models
     public class BookingManagement:BaseEntity
     {
         public int BookingID { get; set; }
-        public int RoomID { get; set; }
+        public int RoomTypeID { get; set; }
 
         public int IsCheckedOut { get; set; }
 
@@ -19,7 +19,7 @@ namespace Project.ENTITIES.Models
 
         //Relational Properties
 
-        public virtual Room Room { get; set; }
+        public virtual RoomType RoomType { get; set; }
         public virtual Booking Booking { get; set; }
 
 

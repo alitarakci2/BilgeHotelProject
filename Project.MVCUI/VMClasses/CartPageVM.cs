@@ -1,4 +1,5 @@
-﻿using Project.MVCUI.Models.BookingTools;
+﻿using Project.ENTITIES.Models;
+using Project.MVCUI.Models.BookingTools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Project.MVCUI.VMClasses
     {
         public Cart Cart { get; set; }
 
-
+        public Booking Booking { get; set; }
 
 
 

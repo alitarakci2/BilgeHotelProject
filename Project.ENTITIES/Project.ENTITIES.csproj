@@ -43,12 +43,14 @@
   <ItemGroup>
     <Compile Include="Enums\DataStatus.cs" />
     <Compile Include="Enums\RoomStatus.cs" />
+    <Compile Include="Enums\SalaryType.cs" />
     <Compile Include="Enums\UserRole.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\AppUserProfile.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\BookingManagement.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

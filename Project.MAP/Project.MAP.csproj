@@ -55,6 +55,7 @@
     <Compile Include="Options\BaseMap.cs" />
     <Compile Include="Options\BookingManagementMap.cs" />
     <Compile Include="Options\BookingMap.cs" />
+    <Compile Include="Options\EmployeeMap.cs" />
     <Compile Include="Options\ProfileMap.cs" />
     <Compile Include="Options\RoomMap.cs" />
     <Compile Include="Options\RoomTypeMap.cs" />
